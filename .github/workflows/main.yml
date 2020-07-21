@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+- name: Hugo Deploy GitHub Pages
+  uses: benmatselby/hugo-deploy-gh-pages@v1.5.0
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v1
+
+      - name: Deploy the site
+        uses: benmatselby/hugo-deploy-gh-pages@master
+        env:
+          HUGO_VERSION: 0.57.2
+          TARGET_REPO: benmatselby/benmatselby.github.io
+          TOKEN: ${{ secrets.TOKEN }}
+          HUGO_ARGS: '-t academic'
+          CNAME: benmatselby.github.io
