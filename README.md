@@ -1,1 +1,1 @@
-Jekurb.dev tech blog
+Jekurb.dev tech blog.
