@@ -31,8 +31,8 @@
 						<span class="description">
 							{{ if isset .Params "description" }}
 								{{ .Description }}
-							{{ else if gt (len .RawContent) 120 }}
-								{{ slicestr .RawContent 0 120 }}...
+							{{ else if gt (len .RawContent) 150 }}
+								{{ .Content | replaceRE "<img.*?>.*?>" "" | safeHTML | truncate 150 }}
 							{{ else }}
 								{{ .RawContent }}
 							{{ end }}
