@@ -1,4 +1,4 @@
-name: Push to GitHub Pages on push to master
+name: Deploy to GitHub Pages on push to master
 on:
   push:
     branches:
@@ -11,8 +11,14 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v1
 
-#      - name: Markdonw lint
-#        uses: actions/checkout@v1
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Markdonw lint
+      - run: npm install -g markdownlint-cli
+      - run: markdownlint content
 
       - name: Deploy the site
         uses: benmatselby/hugo-deploy-gh-pages@master
@@ -23,15 +29,13 @@ jobs:
           HUGO_ARGS: ''
           CNAME: jekurb.dev
 
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-
       - name: Run smoke tests
         env:
           BLOG_BASE_URL: https://jekurb.dev
         run: cd smoke-tests && npm install && npm test
 
+#      - name: If fail revert changes
+
 #      - name: Notify me
-#        uses: actions/checkout@v1
+
+
