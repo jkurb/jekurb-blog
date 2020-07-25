@@ -25,8 +25,8 @@ jobs:
 
       - name: Setup node
         uses: actions/setup-node@v1
-          with:
-            node-version: '12.x'
+        with:
+          node-version: '12.x'
 
       - name: Run smoke tests
         run: cd smoke-tests && npm install && npm test
