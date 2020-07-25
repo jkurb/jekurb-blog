@@ -16,9 +16,11 @@ jobs:
         with:
           node-version: '12.x'
 
-      - name: Markdonw lint
-      - run: npm install -g markdownlint-cli
-      - run: markdownlint content
+      - name: Setup markdownlint-cli
+        run: npm install -g markdownlint-cli
+
+      - name: Check markdown
+        run: markdownlint content
 
       - name: Deploy the site
         uses: benmatselby/hugo-deploy-gh-pages@master
