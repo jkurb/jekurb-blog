@@ -29,6 +29,8 @@ jobs:
           node-version: '12.x'
 
       - name: Run smoke tests
+        env:
+          BLOG_BASE_URL: https://jekurb.dev
         run: cd smoke-tests && npm install && npm test
 
 #      - name: Notify me
