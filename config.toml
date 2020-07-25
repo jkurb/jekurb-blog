@@ -81,12 +81,17 @@ weight = 4
 [[params.social]]
 name = "Github"
 icon = "github"
-url = "https://github.com/"
+url = "https://github.com/eugenix"
 
 [[params.social]]
 name = "Twitter"
 icon = "twitter"
-url = "https://twitter.com/"
+url = "https://twitter.com/eugenixus"
+
+[[params.social]]
+name = "Email"
+icon = "mail"
+url = "mailto:eugene.kurbatov@gmail.com"
 
 # Enable tags.
 [taxonomies]
