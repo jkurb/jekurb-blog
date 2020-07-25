@@ -23,8 +23,8 @@ jobs:
           HUGO_ARGS: ''
           CNAME: jekurb.dev
 
-      - name: Smoke tests
-        uses: actions/checkout@v1
+#      - name: Smoke tests
+#        uses: actions/checkout@v1
 
 #      - name: Notify me
 #        uses: actions/checkout@v1
