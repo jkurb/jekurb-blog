@@ -1,5 +1,8 @@
 {
   "default": true,
   "no-hard-tabs": false,
-  "MD013": { "line_length": 130 }
+  "MD013": {
+    "line_length": 130,
+    "code_block_line_length": 200
+  }
 }
